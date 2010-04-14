@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#pages#menu.jsp" PATH="/pages/menu.jsp"
+  SHAPE="240,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#menu.jsp:0" NAME="item"
+   PATH="/pages/menu.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cadastroTurma::#pages#cadastroTurma.jsp"
+    NAME="output" PATH="/pages/cadastroTurma.jsp"
+    TARGET="rules:#pages#cadastroTurma.jsp" TITLE="cadastroTurma" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="cadastroAluno::#pages#cadastroAluno.jsp"
+    NAME="output1" PATH="/pages/cadastroAluno.jsp"
+    TARGET="rules:#pages#cadastroAluno.jsp" TITLE="cadastroAluno" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listaDeAlunos::#pages#listaDeAlunos.jsp"
+    NAME="output2" PATH="/pages/listaDeAlunos.jsp"
+    TARGET="rules:#pages#listaDeAlunos.jsp" TITLE="listaDeAlunos" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#cadastroTurma.jsp"
+  PATH="/pages/cadastroTurma.jsp" SHAPE="448,17,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:*" PATH="*" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:0" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="menu::#pages#menu.jsp" NAME="output"
+    PATH="/pages/menu.jsp" TARGET="rules:#pages#menu.jsp" TITLE="menu" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#listaDeTurmas.jsp"
+  PATH="/pages/listaDeTurmas.jsp" SHAPE="656,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#listaDeTurmas.jsp:0" NAME="item"
+   PATH="/pages/listaDeTurmas.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cadastroTurma::#pages#cadastroTurma.jsp"
+    NAME="output" PATH="/pages/cadastroTurma.jsp"
+    TARGET="rules:#pages#cadastroTurma.jsp" TITLE="cadastroTurma" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#listaDeAlunos.jsp"
+  PATH="/pages/listaDeAlunos.jsp" SHAPE="480,193,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#listaDeAlunos.jsp:0" NAME="item"
+   PATH="/pages/listaDeAlunos.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cadastroAluno::#pages#cadastroAluno.jsp"
+    NAME="output" PATH="/pages/cadastroAluno.jsp"
+    TARGET="rules:#pages#cadastroAluno.jsp" TITLE="cadastroAluno" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#cadastroAluno.jsp"
+  PATH="/pages/cadastroAluno.jsp" SHAPE="688,209,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>
