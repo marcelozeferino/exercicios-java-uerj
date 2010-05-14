@@ -1,121 +1,54 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
-  <display-name>projSISCOV2010</display-name>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app
+  PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN"
+  "http://java.sun.com/j2ee/dtds/web-app_2_2.dtd">
+
+<web-app>
+
+  <display-name>projSISCOV2010</display-name>	
+
+  <!-- Action Servlet Configuration -->
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/struts-config.xml</param-value>
+    </init-param>
+    
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+
+
+  <!-- Action Servlet Mapping -->
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+
+
+  <!-- The Welcome File List -->
   <welcome-file-list>
-    <welcome-file>Login.jsp</welcome-file>
+    <welcome-file>/Login.jsp</welcome-file>
   </welcome-file-list>
-  
-  
-  <servlet>
-    <description></description>
-    <display-name>ControladoraChamado</display-name>
-    <servlet-name>ControladoraChamado</servlet-name>
-    <servlet-class>chamado.ControladoraChamado</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ControladoraChamado</servlet-name>
-    <url-pattern>/ControladoraChamado</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ControladoraEquipamento</display-name>
-    <servlet-name>ControladoraEquipamento</servlet-name>
-    <servlet-class>equipamento.ControladoraEquipamento</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ControladoraEquipamento</servlet-name>
-    <url-pattern>/ControladoraEquipamento</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ControladoraFabricante</display-name>
-    <servlet-name>ControladoraFabricante</servlet-name>
-    <servlet-class>fabricante.ControladoraFabricante</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ControladoraFabricante</servlet-name>
-    <url-pattern>/ControladoraFabricante</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ControladoraFornecedor</display-name>
-    <servlet-name>ControladoraFornecedor</servlet-name>
-    <servlet-class>fornecedor.ControladoraFornecedor</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ControladoraFornecedor</servlet-name>
-    <url-pattern>/ControladoraFornecedor</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ControladoraLivro</display-name>
-    <servlet-name>ControladoraLivro</servlet-name>
-    <servlet-class>livro.ControladoraLivro</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ControladoraLivro</servlet-name>
-    <url-pattern>/ControladoraLivro</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ControladoraManutencao</display-name>
-    <servlet-name>ControladoraManutencao</servlet-name>
-    <servlet-class>manutencao.ControladoraManutencao</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ControladoraManutencao</servlet-name>
-    <url-pattern>/ControladoraManutencao</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ControladoraSoftware</display-name>
-    <servlet-name>ControladoraSoftware</servlet-name>
-    <servlet-class>software.ControladoraSoftware</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ControladoraSoftware</servlet-name>
-    <url-pattern>/ControladoraSoftware</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ControladoraSuporte</display-name>
-    <servlet-name>ControladoraSuporte</servlet-name>
-    <servlet-class>suporte.ControladoraSuporte</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ControladoraSuporte</servlet-name>
-    <url-pattern>/ControladoraSuporte</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ControladoraTecnico</display-name>
-    <servlet-name>ControladoraTecnico</servlet-name>
-    <servlet-class>tecnico.ControladoraTecnico</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ControladoraTecnico</servlet-name>
-    <url-pattern>/ControladoraTecnico</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ControladoraTecnicoLivro</display-name>
-    <servlet-name>ControladoraTecnicoLivro</servlet-name>
-    <servlet-class>tecnicolivro.ControladoraTecnicoLivro</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ControladoraTecnicoLivro</servlet-name>
-    <url-pattern>/ControladoraTecnicoLivro</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ControladoraUsuario</display-name>
-    <servlet-name>ControladoraUsuario</servlet-name>
-    <servlet-class>usuario.ControladoraUsuario</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ControladoraUsuario</servlet-name>
-    <url-pattern>/ControladoraUsuario</url-pattern>
-  </servlet-mapping>
-  
-  
+
+ 
+  <!-- Struts Tag Library Descriptors -->
+  <taglib>
+    <taglib-uri>/WEB-INF/struts-bean.tld</taglib-uri>
+    <taglib-location>/WEB-INF/struts-bean.tld</taglib-location>
+  </taglib>
+
+  <taglib>
+    <taglib-uri>/WEB-INF/struts-html.tld</taglib-uri>
+    <taglib-location>/WEB-INF/struts-html.tld</taglib-location>
+  </taglib>
+
+  <taglib>
+    <taglib-uri>/WEB-INF/struts-logic.tld</taglib-uri>
+    <taglib-location>/WEB-INF/struts-logic.tld</taglib-location>
+  </taglib>
+
 </web-app>

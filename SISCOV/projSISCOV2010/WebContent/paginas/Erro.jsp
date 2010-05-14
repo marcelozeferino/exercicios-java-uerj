@@ -18,7 +18,7 @@
 		  
 			
 			<h1><font color='red'><i>Erro:</i></font></h1>
-			<h3><%= request.getParameter("mensagem") %></h3>
+			
 			
 			PAMO  - Plano de Assist&ecirc;ncia Medica e Odontol&oacute;gica <br/>
 		 	 Av.  Rio Branco, 156 &ndash; Centro, Rio de Janeiro/RJ CEP: 20040-003 
