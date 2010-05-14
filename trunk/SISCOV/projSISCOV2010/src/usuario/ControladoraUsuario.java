@@ -1,113 +1,153 @@
-package usuario;
+package main.br.com.siscov.usuario;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-/**
- * Servlet implementation class ControladoraUsuario
- */
-public class ControladoraUsuario extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ControladoraUsuario() {
-    }
+import org.apache.log4j.Logger;
+import org.apache.struts.action.Action;
+import org.apache.struts.action.ActionError;
+import org.apache.struts.action.ActionErrors;
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
 
 
+public class ControladoraUsuario extends Action {
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 * 
-	 * LISTA DE OPERAÇÕES BÁSICAS:
-	 * 
-	 * 0 = login
-	 * 1 = logoff
-	 * 
-	 * 2 - > alterar
-	 * 3 - > cadastrar
-	 * 4 - > excluir
-	 * 5 - > pesquisar
-	 * 6 - > voltar
-	 *   
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	@Override
+	public ActionForward execute(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException {
+		
+	
+		UsuarioForm usuarioForm = (UsuarioForm)form;
 		
 		
-		try {
-			String formulario;
-			String stringOperacao;
-			int operacao;
+		if (usuarioForm == null || usuarioForm.getAcao() == null){
 			
-			formulario = request.getParameter("formulario");
-			stringOperacao = request.getParameter("operacao");
-			operacao = Integer.parseInt(stringOperacao);
-				
-
-
-				switch (operacao){
-					case 2:{ // alterar
-							Usuario usuario = new Usuario();
-							
-							usuario.setNome(request.getParameter("consultanome"));
-							usuario.setLogin(request.getParameter("login"));
-							usuario.setMatricula(Integer.parseInt(request.getParameter("matricula")));
-							usuario.setSenha(request.getParameter("senha"));
-							usuario.setEmail(request.getParameter("email"));
-							usuario.setCargo(request.getParameter("cargo"));
-							usuario.setEndereco(request.getParameter("endereco"));
-							usuario.setCidade(request.getParameter("cidade"));
-							usuario.setTelefone(Integer.parseInt(request.getParameter("telefone")));
-							usuario.setTipoAcesso(Integer.parseInt(request.getParameter("tipoacesso")));
-															
-							usuario.alterar(usuario);
-					break;
-					}
-					case 3:{ //cadastrar
-						
-							Usuario usuario = new Usuario();
-							
-							usuario.setNome(request.getParameter("consultanome"));
-							usuario.setLogin(request.getParameter("login"));
-							usuario.setMatricula(Integer.parseInt(request.getParameter("matricula")));
-							usuario.setSenha(request.getParameter("senha"));
-							usuario.setEmail(request.getParameter("email"));
-							usuario.setCargo(request.getParameter("cargo"));
-							usuario.setEndereco(request.getParameter("endereco"));
-							usuario.setCidade(request.getParameter("cidade"));
-							usuario.setTelefone(Integer.parseInt(request.getParameter("telefone")));
-							usuario.setTipoAcesso(Integer.parseInt(request.getParameter("tipoacesso")));
-							
-							usuario.cadastrarUsuario(usuario);
-						
-					break;
-					}
-					case 4:{ // excluir
-							Usuario usuario = new Usuario();
-							usuario.setMatricula(Integer.parseInt(request.getParameter("matricula")));
-							usuario.excluir(usuario);
-						
-					break;
-					}
-					case 6:{ // voltar
-							response.sendRedirect("/paginas/OperacoesAdministrador.jsp");
-							
-					break;
-					}
-
+			usuarioForm.carregarDados(new Usuario());
+			usuarioForm.setAcao("");
+			
+			return mapping.findForward("cadastroUsuario");	
+			
+		}else if (usuarioForm.getAcao().equalsIgnoreCase("pesquisar")){
+			
+			Usuario usuario = new Usuario();
+			
+			try{
+			
+				if ( usuarioForm.getMatriculaPesquisa() != null && !usuarioForm.getMatriculaPesquisa().isEmpty() ){
+					
+					usuario = usuario.obterUsuario(Usuario.CamposPesquisa.MATRICULA, usuarioForm.getMatriculaPesquisa());
+									
+				}else if (usuarioForm.getNomePesquisa() != null && !usuarioForm.getNomePesquisa().isEmpty()){
+					
+					usuario = usuario.obterUsuario(Usuario.CamposPesquisa.NOME, usuarioForm.getNomePesquisa());
+					
 				}
+				
+			}catch (Exception e) {
+				
+				usuarioForm.setMensagem(e.getMessage());
+				
 			}
-			catch (Exception e) {
-				request.setAttribute("mensagem", e.getMessage());
-				RequestDispatcher rd = request.getRequestDispatcher("/Erro.jsp");
-				rd.forward(request, response);
+			
+			if (usuario == null || usuario.getMatricula() == 0 
+					|| usuario.getLogin() == null || usuario.getLogin().isEmpty()){
+				
+				usuarioForm.setMensagem("Nenhum registro encontrado. Favor redigite a Matrícula ou Nome do usuário.");
+				
+			}else{
+				
+				usuarioForm.setMatriculaPesquisa("");
+				usuarioForm.setNomePesquisa("");
+				
+				usuarioForm.carregarDados(usuario);
+				
+				usuarioForm.setAcao("");
+				
 			}
-
+			
+			
+			
+		}else if (usuarioForm != null 
+				&& (usuarioForm.getAcao().equalsIgnoreCase("cadastrar"))
+					|| usuarioForm.getAcao().equalsIgnoreCase("alterar")){
+			
+			Usuario novoUsuario = new Usuario();
+			
+			novoUsuario = usuarioForm.gerarObjeto();
+						
+			try {
+				
+				if (usuarioForm.getAcao().equalsIgnoreCase("cadastrar")){
+					novoUsuario.incluir(novoUsuario);	
+				}else {
+					novoUsuario.alterar(novoUsuario);
+				}
+								
+				usuarioForm.setAcao("");
+				usuarioForm.setMensagem("Registro salvo com sucesso.");
+				
+			} catch (Exception e) {
+				
+				usuarioForm.setMensagem(e.getMessage());
+				
+			}
+						
+		}else if (usuarioForm != null && usuarioForm.getAcao().equalsIgnoreCase("limpar")){
+			
+			usuarioForm.carregarDados(new Usuario());
+			usuarioForm.setAcao("");
+			
+			
+		}else if (usuarioForm != null && usuarioForm.getAcao().equalsIgnoreCase("excluir")){
+			
+			try {
+				
+				if (usuarioForm.getLogin().isEmpty() || usuarioForm.getNome().isEmpty()){
+					
+					usuarioForm.setMensagem("Nenhum usuário selecionado.");
+				
+				}else{
+					
+					Usuario usuario = new Usuario().obterUsuario(Usuario.CamposPesquisa.LOGIN, usuarioForm.getLogin());
+					
+					if (usuario != null && usuario.getLogin().equals(usuarioForm.getLogin())){
+						
+						usuario.excluir(usuario);
+						
+					}else{
+						
+						throw new Exception("Usuário não encontrado na exclusão.");
+						
+					}
+					
+				}
+				
+				
+				usuarioForm.carregarDados(new Usuario());
+				usuarioForm.setAcao("");
+				usuarioForm.setMensagem("Registro excluído com sucesso.");
+				
+			} catch (Exception e) {
+				
+				usuarioForm.setMensagem(e.getMessage());
+				
+			}
+			
 		}
+		
+		return mapping.findForward("cadastroUsuario");
+		
+	}
+	
+	
+	
+       
+  
 }

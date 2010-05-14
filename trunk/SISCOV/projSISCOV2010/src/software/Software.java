@@ -1,13 +1,12 @@
-package software;
+package main.br.com.siscov.software;
 
 
 import java.util.Date;
 
-import livro.Livro;
-
-import equipamento.Equipamento;
-import fabricante.Fabricante;
-import fornecedor.Fornecedor;
+import main.br.com.siscov.equipamento.Equipamento;
+import main.br.com.siscov.fabricante.Fabricante;
+import main.br.com.siscov.fornecedor.Fornecedor;
+import main.br.com.siscov.livro.Livro;
 
 public class Software {
   private int codigo; 

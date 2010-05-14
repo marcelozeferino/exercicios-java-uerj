@@ -1,13 +1,12 @@
-package tecnicolivro;
+package main.br.com.siscov.tecnicolivro;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Vector;
 
-import tecnico.Tecnico;
-
-import livro.Livro;
-import dao.DAO;
+import main.br.com.siscov.dao.DAO;
+import main.br.com.siscov.livro.Livro;
+import main.br.com.siscov.tecnico.Tecnico;
 
 public class TecnicoLivroDAO {
 	

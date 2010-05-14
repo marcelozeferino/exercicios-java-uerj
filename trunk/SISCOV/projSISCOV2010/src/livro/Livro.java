@@ -1,8 +1,8 @@
-package livro;
+package main.br.com.siscov.livro;
 
-import software.Software;
-import tecnico.Tecnico;
-import tecnicolivro.TecnicoLivro;
+import main.br.com.siscov.software.Software;
+import main.br.com.siscov.tecnico.Tecnico;
+import main.br.com.siscov.tecnicolivro.TecnicoLivro;
 
 
 

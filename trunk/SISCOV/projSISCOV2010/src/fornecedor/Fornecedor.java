@@ -1,7 +1,7 @@
-package fornecedor;
+package main.br.com.siscov.fornecedor;
 
-import software.Software;
-import equipamento.Equipamento;
+import main.br.com.siscov.equipamento.Equipamento;
+import main.br.com.siscov.software.Software;
 
 
 
