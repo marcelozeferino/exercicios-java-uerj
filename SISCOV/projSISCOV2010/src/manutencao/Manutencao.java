@@ -1,12 +1,10 @@
-package manutencao;
+package main.br.com.siscov.manutencao;
 
 
 import java.util.Date;
 
-import tecnico.Tecnico;
-
-
-import chamado.Chamado;
+import main.br.com.siscov.chamado.Chamado;
+import main.br.com.siscov.tecnico.Tecnico;
 
 public class Manutencao {
 

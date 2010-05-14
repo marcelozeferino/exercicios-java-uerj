@@ -1,4 +1,4 @@
-package manutencao;
+package main.br.com.siscov.manutencao;
 
 
 public class Status {

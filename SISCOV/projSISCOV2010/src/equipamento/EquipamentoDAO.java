@@ -1,4 +1,4 @@
-package equipamento;
+package main.br.com.siscov.equipamento;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -6,10 +6,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Vector;
 
-import software.Software;
-import usuario.Usuario;
-import dao.DAO;
-import fornecedor.Fornecedor;
+import main.br.com.siscov.dao.DAO;
+import main.br.com.siscov.fornecedor.Fornecedor;
+import main.br.com.siscov.software.Software;
+import main.br.com.siscov.usuario.Usuario;
 
 public class EquipamentoDAO {
 

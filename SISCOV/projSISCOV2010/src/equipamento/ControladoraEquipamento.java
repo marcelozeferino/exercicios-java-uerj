@@ -1,4 +1,4 @@
-package equipamento;
+package main.br.com.siscov.equipamento;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

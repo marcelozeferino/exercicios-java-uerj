@@ -1,4 +1,4 @@
-package fabricante;
+package main.br.com.siscov.fabricante;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

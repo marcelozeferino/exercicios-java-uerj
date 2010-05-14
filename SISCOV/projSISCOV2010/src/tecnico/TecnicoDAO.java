@@ -1,18 +1,15 @@
-package tecnico;
+package main.br.com.siscov.tecnico;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Vector;
 
-import suporte.Area;
-import tecnicolivro.TecnicoLivro;
-
-import livro.Livro;
-import manutencao.Manutencao;
-
-import chamado.Chamado;
-
-import dao.DAO;
+import main.br.com.siscov.chamado.Chamado;
+import main.br.com.siscov.dao.DAO;
+import main.br.com.siscov.livro.Livro;
+import main.br.com.siscov.manutencao.Manutencao;
+import main.br.com.siscov.suporte.Area;
+import main.br.com.siscov.tecnicolivro.TecnicoLivro;
 
 
 

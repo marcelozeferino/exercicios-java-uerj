@@ -1,9 +1,9 @@
-package equipamento;
+package main.br.com.siscov.equipamento;
 
-import software.Software;
-import usuario.Usuario;
-import chamado.Chamado;
-import fornecedor.Fornecedor;
+import main.br.com.siscov.chamado.Chamado;
+import main.br.com.siscov.fornecedor.Fornecedor;
+import main.br.com.siscov.software.Software;
+import main.br.com.siscov.usuario.Usuario;
 
 
 
