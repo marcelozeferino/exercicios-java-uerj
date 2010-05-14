@@ -1,10 +1,10 @@
-package suporte;
+package main.br.com.siscov.suporte;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Vector;
 
-import dao.DAO;
+import main.br.com.siscov.dao.DAO;
 
 
 

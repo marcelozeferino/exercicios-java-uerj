@@ -1,9 +1,9 @@
-package tecnico;
+package main.br.com.siscov.tecnico;
 
-import suporte.Area;
-import tecnicolivro.TecnicoLivro;
-import manutencao.Manutencao;
-import chamado.Chamado;
+import main.br.com.siscov.chamado.Chamado;
+import main.br.com.siscov.manutencao.Manutencao;
+import main.br.com.siscov.suporte.Area;
+import main.br.com.siscov.tecnicolivro.TecnicoLivro;
 
 
 

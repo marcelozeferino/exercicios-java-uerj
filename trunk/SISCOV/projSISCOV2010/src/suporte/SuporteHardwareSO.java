@@ -1,4 +1,4 @@
-package suporte;
+package main.br.com.siscov.suporte;
 
 
 public class SuporteHardwareSO extends Area {

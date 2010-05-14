@@ -1,7 +1,7 @@
-package suporte;
+package main.br.com.siscov.suporte;
 
-import tecnico.Tecnico;
-import chamado.Chamado;
+import main.br.com.siscov.chamado.Chamado;
+import main.br.com.siscov.tecnico.Tecnico;
 
 
 

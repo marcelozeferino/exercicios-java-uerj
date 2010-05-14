@@ -1,6 +1,6 @@
-package fabricante;
+package main.br.com.siscov.fabricante;
 
-import software.Software;
+import main.br.com.siscov.software.Software;
 
 
 

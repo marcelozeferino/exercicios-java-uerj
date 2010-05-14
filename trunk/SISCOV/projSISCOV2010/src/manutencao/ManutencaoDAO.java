@@ -1,16 +1,12 @@
-package manutencao;
+package main.br.com.siscov.manutencao;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Vector;
 
-import tecnico.Tecnico;
-
-
-import chamado.Chamado;
-
-
-import dao.DAO;
+import main.br.com.siscov.chamado.Chamado;
+import main.br.com.siscov.dao.DAO;
+import main.br.com.siscov.tecnico.Tecnico;
 
 
 public class ManutencaoDAO {

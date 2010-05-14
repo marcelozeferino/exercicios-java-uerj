@@ -1,15 +1,13 @@
-package suporte;
+package main.br.com.siscov.suporte;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import tecnico.Tecnico;
-
-import chamado.Chamado;
-
-import dao.DAO;
+import main.br.com.siscov.chamado.Chamado;
+import main.br.com.siscov.dao.DAO;
+import main.br.com.siscov.tecnico.Tecnico;
 
 
 

@@ -1,12 +1,11 @@
-package fabricante;
+package main.br.com.siscov.fabricante;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Vector;
 
-import software.Software;
-
-import dao.DAO;
+import main.br.com.siscov.dao.DAO;
+import main.br.com.siscov.software.Software;
 
 public class FabricanteDAO {
 	
