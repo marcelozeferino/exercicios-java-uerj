@@ -1,17 +1,14 @@
-package chamado;
+package main.br.com.siscov.chamado;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import suporte.Area;
-import tecnico.Tecnico;
-import usuario.Usuario;
-
-import manutencao.Manutencao;
-
-import dao.DAO;
-import equipamento.Equipamento;
+import main.br.com.siscov.dao.DAO;
+import main.br.com.siscov.equipamento.Equipamento;
+import main.br.com.siscov.manutencao.Manutencao;
+import main.br.com.siscov.tecnico.Tecnico;
+import main.br.com.siscov.usuario.Usuario;
 
 
 

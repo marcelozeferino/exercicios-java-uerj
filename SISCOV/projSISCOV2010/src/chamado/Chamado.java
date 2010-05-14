@@ -1,15 +1,13 @@
-package chamado;
+package main.br.com.siscov.chamado;
 
 
 import java.sql.SQLException;
 import java.util.Date;
 
-import suporte.Area;
-import usuario.Usuario;
-
-import manutencao.Manutencao;
-
-import equipamento.Equipamento;
+import main.br.com.siscov.equipamento.Equipamento;
+import main.br.com.siscov.manutencao.Manutencao;
+import main.br.com.siscov.suporte.Area;
+import main.br.com.siscov.usuario.Usuario;
 
 
 
