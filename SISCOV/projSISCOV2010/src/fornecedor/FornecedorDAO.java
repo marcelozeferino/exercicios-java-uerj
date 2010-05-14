@@ -1,13 +1,12 @@
-package fornecedor;
+package main.br.com.siscov.fornecedor;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Vector;
 
-import software.Software;
-
-import dao.DAO;
-import equipamento.Equipamento;
+import main.br.com.siscov.dao.DAO;
+import main.br.com.siscov.equipamento.Equipamento;
+import main.br.com.siscov.software.Software;
 
 
 public class FornecedorDAO {

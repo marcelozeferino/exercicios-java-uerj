@@ -1,10 +1,9 @@
-package tecnicolivro;
+package main.br.com.siscov.tecnicolivro;
 
 import java.util.Date;
 
-import tecnico.Tecnico;
-
-import livro.Livro;
+import main.br.com.siscov.livro.Livro;
+import main.br.com.siscov.tecnico.Tecnico;
 
 public class TecnicoLivro {
 
