@@ -1,6 +1,0 @@
-
-User Story 1: Cálculo de Salário com abono
-
-Como um usuário
-Eu desejo Informar um percentual de abono para o salário de um funcionário
-Para que possa descobrir o salário reajustado
