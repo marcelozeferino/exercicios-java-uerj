@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="1.2" xmlns="http://java.sun.com/xml/ns/javaee"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+ <converter>
+  <converter-id>TurmaConverter</converter-id>
+  <converter-class>br.com.uerj.controller.converter.TurmaConverter</converter-class>
+ </converter>
+ <managed-bean>
+  <description>MenuBean</description>
+  <managed-bean-name>menuBean</managed-bean-name>
+  <managed-bean-class>br.com.uerj.controller.MenuBean</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
+ <managed-bean>
+  <description>TurmaBean</description>
+  <managed-bean-name>turmaBean</managed-bean-name>
+  <managed-bean-class>br.com.uerj.controller.TurmaBean</managed-bean-class>
+  <managed-bean-scope>request</managed-bean-scope>
+ </managed-bean>
+ <managed-bean>
+  <description>AlunoBean</description>
+  <managed-bean-name>alunoBean</managed-bean-name>
+  <managed-bean-class>br.com.uerj.controller.AlunoBean</managed-bean-class>
+  <managed-bean-scope>request</managed-bean-scope>
+ </managed-bean>
+ <navigation-rule>
+  <from-view-id>/pages/menu.jsp</from-view-id>
+  <navigation-case>
+   <from-outcome>cadastroTurma</from-outcome>
+   <to-view-id>/pages/cadastroTurma.jsp</to-view-id>
+  </navigation-case>
+  <navigation-case>
+   <from-outcome>cadastroAluno</from-outcome>
+   <to-view-id>/pages/cadastroAluno.jsp</to-view-id>
+  </navigation-case>
+  <navigation-case>
+   <from-outcome>listaDeTurmas</from-outcome>
+   <to-view-id>/pages/listaDeTurmas.jsp</to-view-id>
+  </navigation-case>
+  <navigation-case>
+   <from-outcome>listaDeAlunos</from-outcome>
+   <to-view-id>/pages/listaDeAlunos.jsp</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ <navigation-rule>
+  <from-view-id>/pages/listaDeTurmas.jsp</from-view-id>
+  <navigation-case>
+   <from-outcome>cadastroTurma</from-outcome>
+   <to-view-id>/pages/cadastroTurma.jsp</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ <navigation-rule>
+  <from-view-id>/pages/listaDeAlunos.jsp</from-view-id>
+  <navigation-case>
+   <from-outcome>cadastroAluno</from-outcome>
+   <to-view-id>/pages/cadastroAluno.jsp</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ <navigation-rule>
+  <from-view-id>*</from-view-id>
+  <navigation-case>
+   <from-outcome>menu</from-outcome>
+   <to-view-id>/pages/menu.jsp</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+</faces-config>
