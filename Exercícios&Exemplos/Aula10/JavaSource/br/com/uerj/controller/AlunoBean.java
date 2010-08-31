@@ -18,13 +18,11 @@ public class AlunoBean {
 	
 	public String salvarAluno(){
 		
+		aluno.persistir(this.aluno);
+		
 		this.mensagem = "Aluno Matrícula " + this.aluno.getMatricula() + " salvo com sucesso.";
 		
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(mensagem));
-		
-		this.aluno.setMatricula(0);
-		this.aluno.setNome("");
-		this.aluno.setTurma(new Turma());
 		
 		return "cadastroAluno";
 	}

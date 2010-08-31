@@ -15,10 +15,14 @@
 					<h:inputText value="#{turmaBean.turma.codigo}" id="inputCodigo"/>
 					
 					<h:outputLabel value="Data de Início:" for="inputDataInicio" />
-					<h:inputText value="#{turmaBean.turma.dataInicio}" id="inputDataInicio" />
+					<h:inputText value="#{turmaBean.turma.dataInicio}" id="inputDataInicio">
+						<f:convertDateTime type="date" dateStyle="medium"/>
+					</h:inputText>
+					
 									
 					<h:outputLabel value="Carga Horária:" for="inputCarga" />
-					<h:inputText value="#{turmaBean.turma.cargaHoraria}" id="inputCarga"  />
+					<h:inputText value="#{turmaBean.turma.cargaHoraria}" id="inputCarga"/>
+			
 					
 				</h:panelGrid>
 				

@@ -15,13 +15,11 @@ public class TurmaBean {
 	
 	public String salvarTurma(){
 		
+		turma.persistir();
+		
 		this.mensagem = "Turma código " + this.turma.getCodigo() + " salva com sucesso.";
 		
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(mensagem));
-		
-		this.turma.setCargaHoraria(0);
-		this.turma.setCodigo(0);
-		this.turma.setDataInicio(null);
 		
 		return "cadastroTurma";
 	}
