@@ -10,6 +10,7 @@ public class TesteBean implements Serializable {
 	
 	public TesteBean(){
 		cpf = "";
+		mensagem = "";
 	}
 	
 	public TesteBean(String cpf){
