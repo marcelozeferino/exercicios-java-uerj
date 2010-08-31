@@ -1,4 +1,4 @@
-package aula07.acesso;
+package aula08.acesso;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,14 +17,14 @@ public class AcessoADados {
 			
 			Connection conn = DriverManager.getConnection("jdbc:derby:testeDB;create=true");
 			
-			Statement stm = conn.createStatement();  
-			ResultSet rs = stm.executeQuery("SELECT * from aluno");
-			rs.next();
-			System.out.println(rs.getString("nome"));
+			Statement stmt = conn.createStatement();   
+			ResultSet rs = stmt.executeQuery("SELECT * from aluno");
 			
 			while(rs.next()){
 				
 				System.out.println(rs.getInt("codigo"));
+				System.out.println(rs.getString("nome"));
+				System.out.println(rs.getInt("turma"));
 				
 			}
 			
@@ -34,16 +34,7 @@ public class AcessoADados {
 			e.printStackTrace();
 		} 
 		
-/*
-		while (rs.next()) {  
-		    String coluna1 = rs.getString("coluna1");  
-		    int coluna2 = rs.getInt("coluna2");  
-		     
-		} */
-
 		
-		
-
 	}
 
 }
