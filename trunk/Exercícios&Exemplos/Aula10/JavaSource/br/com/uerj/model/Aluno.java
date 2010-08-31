@@ -47,7 +47,7 @@ public class Aluno {
 	
 	public List<Aluno> getAlunos(){
 		
-		return new AlunoDAO().obterAlunosCadastradas();
+		return new AlunoDAO().obterAlunosCadastrados();
 		
 	}
 	
