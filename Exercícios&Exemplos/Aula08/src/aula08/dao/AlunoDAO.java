@@ -43,11 +43,17 @@ public class AlunoDAO extends GenericDAO implements IDAO {
 
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
-		//alunos = (List<Aluno>) query("from Aluno");
-		alunos = (List<Aluno>) listObjects(Aluno.class);
+		alunos = (List<Aluno>) query("from Aluno");
+		// alunos = (List<Aluno>) listObjects(Aluno.class);
 
 		return alunos;
 
+	}
+	
+	public void salvarNovoAluno(Aluno alunoNovo){
+		
+		insert(alunoNovo);
+		
 	}
 	
 	
