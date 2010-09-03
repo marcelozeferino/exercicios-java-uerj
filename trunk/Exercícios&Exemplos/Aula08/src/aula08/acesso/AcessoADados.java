@@ -18,12 +18,13 @@ public class AcessoADados {
 			Connection conn = DriverManager.getConnection("jdbc:derby:testeDB;create=true");
 			
 			Statement stmt = conn.createStatement();   
+			
 			ResultSet rs = stmt.executeQuery("SELECT * from aluno");
 			
 			while(rs.next()){
 				
-				System.out.println(rs.getInt("codigo"));
-				System.out.println(rs.getString("nome"));
+				System.out.print(rs.getInt("codigo") + " - ");
+				System.out.print(rs.getString("nome") + " - ");
 				System.out.println(rs.getInt("turma"));
 				
 			}

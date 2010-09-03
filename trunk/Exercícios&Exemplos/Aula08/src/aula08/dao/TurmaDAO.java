@@ -17,5 +17,12 @@ public class TurmaDAO extends GenericDAO {
 		return turmas;
 
 	}
+	
+	public void salvarNovaTurma(Turma novaTurma){
+		
+		insert(novaTurma);
+		
+	}
+	
 
 }
