@@ -11,6 +11,13 @@ import aula08.dao.TurmaDAO;
 import aula08.dominio.Aluno;
 import aula08.dominio.Turma;
 
+/**
+ * Classe de testes para apresentação de Alunos cadastrados
+ * no banco, inclusão de novos registros, etc.
+ * 
+ * @author mzeferino
+ *
+ */
 public class ApresentaDado {
 
 	/**
