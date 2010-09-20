@@ -5,14 +5,18 @@
 		<title>Cadastro de Alunos</title>
 	</head>
 	<body>
+		
+		
 		<f:view>
-		 <h:form>
+		 <h:form id="formulario">
+	
 			<h:panelGroup>
 			
 				<h:panelGrid columns="2">
 					
 					<h:outputLabel value="Matrícula:" for="inputMat" />
-					<h:inputText value="#{alunoBean.aluno.matricula}" id="inputMat"/>
+					<h:inputText value="#{alunoBean.aluno.matricula}" id="inputMat" />
+					
 					
 					<h:outputLabel value="Nome:" for="inputNome" />
 					<h:inputText value="#{alunoBean.aluno.nome}" id="inputNome" />
@@ -21,8 +25,7 @@
 					<h:selectOneMenu id="comboTurma" value="#{alunoBean.aluno.turma}"  >
 						<f:selectItems value="#{alunoBean.turmasCadastradas}"/>
 						<f:converter converterId="TurmaConverter"/>												
-					</h:selectOneMenu>				
-									
+					</h:selectOneMenu>												
 					
 				</h:panelGrid>
 				

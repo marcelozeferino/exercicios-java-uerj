@@ -21,7 +21,7 @@ public class Turma {
 	}
 	
 	public Turma(){
-		this.dataInicio = new Date();
+		//this.dataInicio = new Date();
 	}
 	
 	//Getters and setters
