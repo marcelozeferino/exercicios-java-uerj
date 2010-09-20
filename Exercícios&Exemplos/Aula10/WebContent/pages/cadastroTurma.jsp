@@ -2,11 +2,22 @@
 <%@ taglib uri="http://java.sun.com/jsf/core" prefix="f" %>
 <html>
 	<head>
+		<script language="javascript" type="text/javascript" src="/Aula10/resources/jquery-1.4.2.js"></script>
+		<script language="javascript" type="text/javascript" src="/Aula10/resources/jquerymaskedinput-121.js"></script>
 		<title>Cadastro de Turmas</title>
 	</head>
 	<body>
+		
+		<script language="javascript" type="text/javascript">
+
+			jQuery(function($){
+				   $("#formulario\\:inputDataInicio").mask("99/99/9999");
+			});	
+			
+		</script>
+		
 		<f:view>
-		 <h:form>
+		 <h:form id="formulario">
 			<h:panelGroup>
 			
 				<h:panelGrid columns="2">
