@@ -1,0 +1,19 @@
+
+===============================================================================
+ == Marcelo Zeferino
+ == Setembro/2010
+ == Projeto de Exemplo para treinamento em Java com Hibernate, JSF e RichFaces
+ == 
+ == São necessárias para utilização do projeto, as libs das seguintes ferramentas:
+ == 	- Hibernate;
+ == 	- JPA (ej3persistence.jar);
+ == 	- JSF
+ == 	- JBoss RichFaces
+ == 	- Log4J
+ ==
+ == O objetivo da aplicação é gerenciar contatos, dividindo 
+ == os dados cadastrados por pessoa física ou jurídica (empresas podem ter diversos subcontatos
+ ==
+ ==
+===============================================================================
+ 
