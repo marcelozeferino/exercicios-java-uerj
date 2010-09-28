@@ -11,6 +11,9 @@
  == 	- JBoss RichFaces
  == 	- Log4J
  ==
+ == Para iniciação no RichFaces, é sugerido o guia disponível em:
+ ==  - http://docs.jboss.org/richfaces/latest_3_3_X/en/devguide/html/GettingStarted.html
+  
  == O objetivo da aplicação é gerenciar contatos, dividindo 
  == os dados cadastrados por pessoa física ou jurídica (empresas podem ter diversos subcontatos
  ==
