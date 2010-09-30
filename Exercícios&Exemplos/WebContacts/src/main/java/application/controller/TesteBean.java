@@ -1,4 +1,7 @@
-package main.java.application.controller;
+ package main.java.application.controller;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TesteBean {
 	
@@ -16,5 +19,6 @@ public class TesteBean {
 		this.nome = "Teste: " + this.nome.toUpperCase();
 		return "testeAction";
 	}
+	
 
 }
