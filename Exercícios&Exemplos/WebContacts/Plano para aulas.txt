@@ -1,0 +1,24 @@
+Aula 1 ===================
+
+ - Apresentação de estrutura da App
+ - Iniciação sobre RichFaces
+ - Enfase na modelagem de Interface Contato, DI e IoC, DDD e Testes
+
+
+Aula 2 e 3 ===================
+
+ - Refatoração de Contato para Classe e ContatoEmpresa herdando desta
+ - Exclusão de ContatoPessoal e utilização de Contato como tal classe
+ - Configuração e criação de mapeamentos no Hibernate
+ - Testes de estrutura de persistência
+ - Criação de página básica para cadastro
+ - Criação de validações
+ - Criação de máscaras para telefone
+ - Criação de interface para pesquisa
+
+
+Aula 4 ========================
+
+ - Estrutura de Tomcat e Deploy de applicação
+ - Estrutura do JBoss e deploy da aplicação
+ - Comentários sobre outras ferramentas: Maven/Ant, Spring, Log4J, Facelets, GWT e GAE, etc
