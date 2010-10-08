@@ -9,25 +9,54 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import main.java.domain.repository.ContatoRepository;
+
 
 @Entity
-@Table(name="contato")
-@Inheritance(strategy=InheritanceType.JOINED)
+@Table(name = "contato")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Contato {
 
 	@Id
 	@GeneratedValue
 	private int idContato;
-	
-	@Column(name="nome", nullable=false)
+
+	@Column(name = "nome", nullable = false)
 	private String nome;
 	
-	@OneToMany(mappedBy="contato",cascade=CascadeType.ALL)
-	private List<Telefone> telefones;
-	
+	@ManyToOne	
+	private ContatoEmpresa contatoPrincipal;
 
+	@OneToMany(mappedBy = "contato", cascade = CascadeType.ALL)
+	private List<Telefone> telefones;
+
+	@Transient
+	protected ContatoRepository repository;
+	
+	public Contato(){
+		
+	}
+	
+    /**
+     * Construtor injetando Repository
+     */
+	public Contato(ContatoRepository repository){
+		this.repository = repository;
+	}
+	
+	/**
+	 * Metodo set para permitir também injeção de dependência pós construção.
+	 * @param repository
+	 */
+	protected void setRepository(ContatoRepository repository){
+		this.repository = repository;
+	}
+	
 	public List<Telefone> getTelefones() {
 		return telefones;
 	}
@@ -50,6 +79,14 @@ public class Contato {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public final ContatoEmpresa getContatoPrincipal() {
+		return contatoPrincipal;
+	}
+
+	public final void setContatoPrincipal(ContatoEmpresa contatoPrincipal) {
+		this.contatoPrincipal = contatoPrincipal;
 	}
 
 	@Override
@@ -80,5 +117,4 @@ public class Contato {
 		return true;
 	}
 
-	
 }
