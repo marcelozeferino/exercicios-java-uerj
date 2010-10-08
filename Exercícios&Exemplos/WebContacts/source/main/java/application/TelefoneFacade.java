@@ -2,16 +2,14 @@ package main.java.application;
 
 import java.util.List;
 
-import test.java.application.TelefoneFacadeTest;
-
 import main.java.domain.model.Telefone;
 import main.java.domain.model.Tipo;
 import main.java.domain.repository.TelefoneRepositoy;
 
 public class TelefoneFacade {
-
-	private final int INDEX_RESIDENCIAL = 0;
-	private final int INDEX_COMERCIAL = 1;
+	
+	private final int INDEX_COMERCIAL = 0;
+	private final int INDEX_RESIDENCIAL = 1;
 	
 	private TelefoneRepositoy repository;
 	
@@ -37,8 +35,8 @@ public class TelefoneFacade {
 	
 	public Telefone salvar(Telefone novoTelefone){
 		
-		Integer telefoneSalvo = this.repository.salvar(novoTelefone);
-		return this.repository.procurarPorId(telefoneSalvo);
+		this.repository.salvar(novoTelefone);
+		return this.repository.procurarPorNumero(novoTelefone.getNumero());
 		
 		
 	}

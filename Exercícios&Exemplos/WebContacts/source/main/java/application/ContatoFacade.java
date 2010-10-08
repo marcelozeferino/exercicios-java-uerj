@@ -4,7 +4,6 @@ import main.java.domain.model.Contato;
 import main.java.domain.repository.ContatoRepository;
 
 public class ContatoFacade {
-
 	
 	private ContatoRepository repository;
 	
@@ -12,10 +11,14 @@ public class ContatoFacade {
 		this.repository = repository;
 	}
 	
-	public Contato obterContato(int idContato){
+	public Contato obterContatoPorId(int idContato){
 		
 		return  repository.procurarPorId(idContato);
 		
+	}
+	
+	public Contato salvar(Contato novoContato){
+		return repository.salvar(novoContato);
 	}
 	
 }

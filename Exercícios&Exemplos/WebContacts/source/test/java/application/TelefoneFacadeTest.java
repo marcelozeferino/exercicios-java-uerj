@@ -3,13 +3,14 @@ package test.java.application;
 import static org.junit.Assert.assertEquals;
 
 import java.util.List;
+import java.util.Random;
 
 import main.java.application.ContatoFacade;
 import main.java.application.TelefoneFacade;
 import main.java.domain.model.Telefone;
 import main.java.domain.model.Tipo;
-import main.java.infrastructure.ContatoRepositoryHibernate;
-import main.java.infrastructure.TelefoneRepositoryHibernate;
+import main.java.infrastructure.ContatoRepositoryImpl;
+import main.java.infrastructure.TelefoneRepositoryImpl;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -21,8 +22,8 @@ public class TelefoneFacadeTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		telefoneFacade = new TelefoneFacade(new TelefoneRepositoryHibernate());
-		contatoFacade = new ContatoFacade(new ContatoRepositoryHibernate());
+		telefoneFacade = new TelefoneFacade(new TelefoneRepositoryImpl());
+		contatoFacade = new ContatoFacade(new ContatoRepositoryImpl());
 	}
 	
 	@Test
@@ -33,15 +34,15 @@ public class TelefoneFacadeTest {
 		assertEquals(2, tipos.size());	
 		
 		
-		Tipo residencial = new Tipo(1, "Residencial");
-		Tipo comercial = new Tipo(2, "Comercial");
+		Tipo residencial = new Tipo(1, "Comercial");
+		Tipo comercial = new Tipo(2, "Residencial");
 		
 		assertEquals("Não contém residencial", true, tipos.contains(residencial));
 		assertEquals("Não contém comercial", true, tipos.contains(comercial));
 		
 	}
 	
-	/*@Test
+	@Test
 	public void testObterTipo(){
 		
 		Tipo residencial = telefoneFacade.tipoResidencial();
@@ -56,9 +57,9 @@ public class TelefoneFacadeTest {
 	public void testCadastrarTelefone(){
 		
 		Telefone tel = new Telefone();
-		tel.setNumero("8131-4775");
-		tel.setTipo(telefoneFacade.tipoResidencial());
-		tel.setContato(contatoFacade.obterContato(1));
+		tel.setNumero("8131-" + new Random().nextInt(10000));
+		tel.setTipo(telefoneFacade.obterTipos().get(0));
+		tel.setContato(contatoFacade.obterContatoPorId(1));
 		
 		Telefone telefoneSalvo = telefoneFacade.salvar(tel);
 		
@@ -66,7 +67,7 @@ public class TelefoneFacadeTest {
 		
 		assertEquals(tel, telefoneSalvo);
 		
-	}*/
+	}
 
 }
 
