@@ -10,7 +10,7 @@ public interface ContatoRepository {
 	public void atualizar(Contato novoContato);
 	public void remover(Contato novoContato);
 	public Contato procurarPorId(Integer idContato);
-	public List<Contato> obterSubContatos();
+	public List<Contato> obterSubContatos(Contato contatoPrincipal);
 	
 
 }
