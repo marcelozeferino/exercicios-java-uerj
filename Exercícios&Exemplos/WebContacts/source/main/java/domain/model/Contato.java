@@ -12,9 +12,6 @@ import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
-
-import main.java.domain.repository.ContatoRepository;
 
 
 @Entity
@@ -35,27 +32,6 @@ public class Contato {
 	@OneToMany(mappedBy = "contato", cascade = CascadeType.ALL)
 	private List<Telefone> telefones;
 
-	@Transient
-	protected ContatoRepository repository;
-	
-	public Contato(){
-		
-	}
-	
-    /**
-     * Construtor injetando Repository
-     */
-	public Contato(ContatoRepository repository){
-		this.repository = repository;
-	}
-	
-	/**
-	 * Metodo set para permitir também injeção de dependência pós construção.
-	 * @param repository
-	 */
-	protected void setRepository(ContatoRepository repository){
-		this.repository = repository;
-	}
 	
 	public List<Telefone> getTelefones() {
 		return telefones;
