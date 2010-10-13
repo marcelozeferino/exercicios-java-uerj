@@ -2,6 +2,6 @@
 
 <html>
 	<body>
-		<jsp:forward page="/richFacesWelcome.jsf" />
+		<jsp:forward page="/pages/menu.jsf"/>
 	</body>
 </html>
