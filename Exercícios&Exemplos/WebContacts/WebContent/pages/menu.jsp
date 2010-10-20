@@ -7,29 +7,41 @@
 
 <html>
 <head>
-	<title>..:: WebContacts - Cadastro Web de Contatos</title>
-	
-	<h2> WebContacts - Seus contatos via Web </h2>
-		
+<title>..:: WebContacts - Cadastro Web de Contatos</title>
+
+<h2>WebContacts - Seus contatos via Web</h2>
+
 </head>
 <body>
 <f:view>
-	<h:form>
+	<a4j:form>
+
 		<h:panelGrid columns="2">
-			<rich:dropDownMenu
-				value="Cadastro" submitMode="none" direction="auto">
-				<rich:menuItem value="Contatos" />
-				<rich:menuItem value="Tipos de Telefones" />	
+
+			<rich:dropDownMenu value="Cadastro" submitMode="none"
+				direction="auto">
+
+				<rich:menuItem>
+					<a4j:commandLink value="Contatos" action="cadastroContato" />
+				</rich:menuItem>
+
+				<rich:menuItem>
+					<a4j:commandLink value="Contatos Empresa"
+						action="#{contatosBean.testar}" />
+				</rich:menuItem>
+
+				<rich:menuItem value="Tipos de Telefones" />
+
 			</rich:dropDownMenu>
-	
-			<rich:dropDownMenu
-				value="Pesquisa" submitMode="none" direction="auto">
+
+			<rich:dropDownMenu value="Pesquisa" submitMode="none"
+				direction="auto">
 				<rich:menuItem value="Contatos" />
-				<rich:menuItem value="Telefones" />	
+				<rich:menuItem value="Telefones" />
 			</rich:dropDownMenu>
 		</h:panelGrid>
 
-	</h:form>
+	</a4j:form>
 </f:view>
 </body>
 </html>

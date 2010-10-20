@@ -1,4 +1,4 @@
-package main.java.infrastructure;
+package main.java.infrastructure.persistence;
 
 import java.util.ArrayList;
 import java.util.List;

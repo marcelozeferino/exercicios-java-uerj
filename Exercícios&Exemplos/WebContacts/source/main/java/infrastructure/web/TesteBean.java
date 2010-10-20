@@ -1,4 +1,4 @@
-package main.java.application.controller;
+package main.java.infrastructure.web;
 
 public class TesteBean {
 	
