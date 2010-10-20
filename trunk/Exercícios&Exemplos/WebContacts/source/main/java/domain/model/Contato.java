@@ -24,7 +24,7 @@ public class Contato {
 	private int idContato;
 
 	@Column(name = "nome", nullable = false)
-	private String nome;
+	private String nome = "";
 	
 	@ManyToOne	
 	private ContatoEmpresa contatoPrincipal;

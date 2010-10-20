@@ -9,8 +9,8 @@ import main.java.application.ContatoFacade;
 import main.java.application.TelefoneFacade;
 import main.java.domain.model.Telefone;
 import main.java.domain.model.Tipo;
-import main.java.infrastructure.ContatoRepositoryImpl;
-import main.java.infrastructure.TelefoneRepositoryImpl;
+import main.java.infrastructure.persistence.ContatoRepositoryImpl;
+import main.java.infrastructure.persistence.TelefoneRepositoryImpl;
 
 import org.junit.Before;
 import org.junit.Test;

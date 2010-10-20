@@ -9,7 +9,7 @@ import java.util.Random;
 import main.java.application.ContatoFacade;
 import main.java.domain.model.Contato;
 import main.java.domain.model.ContatoEmpresa;
-import main.java.infrastructure.ContatoRepositoryImpl;
+import main.java.infrastructure.persistence.ContatoRepositoryImpl;
 
 import org.junit.After;
 import org.junit.Before;
@@ -35,7 +35,7 @@ public class ContatoFacadeTest {
 		
 		Contato novoContato = new Contato();
 		novoContato.setIdContato(new Random().nextInt(100));
-		novoContato.setNome("Fulano Numero " + new Random().nextInt(100));
+		novoContato.setNome("Fulano Núçãomero " + new Random().nextInt(100));
 		
 		Contato contatoSalvo = contatoFacade.salvar(novoContato);
 		
