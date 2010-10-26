@@ -11,6 +11,7 @@ public interface ContatoRepository {
 	public void remover(Contato novoContato);
 	public Contato procurarPorId(Integer idContato);
 	public List<Contato> obterSubContatos(Contato contatoPrincipal);
+	public List<Contato> procurarPorNome(String nomeDoContato);
 	
 
 }

@@ -14,12 +14,26 @@
 		<managed-bean-class>main.java.infrastructure.web.ContatosBean</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>pesquisaContatoBean</managed-bean-name>
+		<managed-bean-class>main.java.infrastructure.web.PesquisaContatoBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
 
 	<navigation-rule>
 		<from-view-id>/pages/menu.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>cadastroContato</from-outcome>
 			<to-view-id>/pages/cadastroContato.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/pages/menu.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>pesquisaContato</from-outcome>
+			<to-view-id>/pages/pesquisaContato.jsp</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 

@@ -32,6 +32,24 @@ public class Contato {
 	@OneToMany(mappedBy = "contato", cascade = CascadeType.ALL)
 	private List<Telefone> telefones;
 
+	public String getListaDeTelefones (){
+		
+		StringBuilder listaDeTelefones = new StringBuilder();
+		
+		for (Telefone telefoneSelecionado : getTelefones()) {
+			
+			listaDeTelefones.append(telefoneSelecionado.getNumero() 
+					+ "(" + telefoneSelecionado.getTipo() + ")") ;
+			
+			listaDeTelefones.append("; ");
+			
+		}
+		
+		return listaDeTelefones.toString();
+		
+	}
+	
+	
 	
 	public List<Telefone> getTelefones() {
 		return telefones;

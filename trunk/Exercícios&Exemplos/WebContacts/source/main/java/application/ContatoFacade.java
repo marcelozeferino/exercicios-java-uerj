@@ -1,5 +1,7 @@
 package main.java.application;
 
+import java.util.List;
+
 import main.java.domain.model.Contato;
 import main.java.domain.repository.ContatoRepository;
 import main.java.infrastructure.persistence.ContatoRepositoryImpl;
@@ -19,6 +21,12 @@ public class ContatoFacade {
 	public Contato obterContatoPorId(int idContato){
 		
 		return  repository.procurarPorId(idContato);
+		
+	}
+	
+	public List<Contato> obterContatoPorNome(String nomeDoContato){
+		
+		return repository.procurarPorNome(nomeDoContato);
 		
 	}
 	

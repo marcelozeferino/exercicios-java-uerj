@@ -22,12 +22,11 @@
 				direction="auto">
 
 				<rich:menuItem>
-					<a4j:commandLink value="Contatos" action="cadastroContato" />
+					<h:commandLink action="cadastroContato">Contatos</h:commandLink>
 				</rich:menuItem>
 
 				<rich:menuItem>
-					<a4j:commandLink value="Contatos Empresa"
-						action="#{contatosBean.testar}" />
+					<a4j:commandLink value="Contatos Empresa"/>
 				</rich:menuItem>
 
 				<rich:menuItem value="Tipos de Telefones" />
@@ -36,7 +35,11 @@
 
 			<rich:dropDownMenu value="Pesquisa" submitMode="none"
 				direction="auto">
-				<rich:menuItem value="Contatos" />
+				
+				<rich:menuItem>
+					<h:commandLink action="pesquisaContato">Contatos</h:commandLink>
+				</rich:menuItem>
+				
 				<rich:menuItem value="Telefones" />
 			</rich:dropDownMenu>
 		</h:panelGrid>

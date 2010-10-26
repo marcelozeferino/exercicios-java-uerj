@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
 import main.java.domain.model.Telefone;
 import main.java.domain.model.Tipo;
@@ -34,8 +32,7 @@ public class TelefoneRepositoryImpl implements TelefoneRepositoy {
 
 		try {
 
-			EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("default");  
-			EntityManager entityManager = entityManagerFactory.createEntityManager();     
+			EntityManager entityManager = DefaultEntityManager.getEntityManager();     
 		
 			entityManager.getTransaction().begin();
 			
@@ -58,10 +55,9 @@ public class TelefoneRepositoryImpl implements TelefoneRepositoy {
 
 		try {
 			
-			EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("default");  
-			EntityManager entityManager = entityManagerFactory.createEntityManager();     
-						
-	        tiposCadastrados = (List<Tipo>) entityManager.createQuery("from Tipo order by idTipo").getResultList();
+			EntityManager entityManager = DefaultEntityManager.getEntityManager();						
+	        
+			tiposCadastrados = (List<Tipo>) entityManager.createQuery("from Tipo order by idTipo").getResultList();
 	        
 	        
 		} catch (Exception e) {
@@ -78,8 +74,7 @@ public class TelefoneRepositoryImpl implements TelefoneRepositoy {
 	
 		try {
 			
-			EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("default");  
-			EntityManager entityManager = entityManagerFactory.createEntityManager();     
+			EntityManager entityManager = DefaultEntityManager.getEntityManager();     
 		
 			Telefone telefoneRecuperado = (Telefone) entityManager.find(Telefone.class, id);
 			
@@ -98,8 +93,7 @@ public class TelefoneRepositoryImpl implements TelefoneRepositoy {
 		
 		try {
 			
-			EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("default");  
-			EntityManager entityManager = entityManagerFactory.createEntityManager();     
+			EntityManager entityManager = DefaultEntityManager.getEntityManager();     
 		
 			Session session = (Session) entityManager.getDelegate();
 

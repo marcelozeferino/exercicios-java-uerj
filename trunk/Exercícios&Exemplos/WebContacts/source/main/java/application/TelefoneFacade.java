@@ -14,6 +14,7 @@ public class TelefoneFacade {
 	private final int INDEX_COMERCIAL = 0;
 	private final int INDEX_RESIDENCIAL = 1;
 	
+	
 	private TelefoneRepositoy repository;
 	
 	public TelefoneFacade(){
