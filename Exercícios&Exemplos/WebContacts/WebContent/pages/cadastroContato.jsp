@@ -40,7 +40,7 @@
 					<h:panelGrid columns="2" id="gridDados">
 		
 						<h:outputLabel value="Tipo: " />
-						<rich:comboBox id="cmbTipoTelefoneEmpresa" 
+						<rich:comboBox id="cmbTipoTelefoneEmpresa"
 							value="#{contatosBean.telefone.tipo.descricao}">
 							<f:selectItems value="#{contatosBean.tiposCadastrados}"/>
 						</rich:comboBox>
