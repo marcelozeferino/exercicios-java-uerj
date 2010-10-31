@@ -13,6 +13,7 @@ public class PesquisaContatoBean {
 	private Integer pagina;
 	private boolean buscaAutomatica = false;
 
+
 	public final String getNomeContato() {
 		return nomeContato;
 	}

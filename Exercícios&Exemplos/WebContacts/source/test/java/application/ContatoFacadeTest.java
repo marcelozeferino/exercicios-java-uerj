@@ -1,21 +1,20 @@
 package test.java.application;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
 import java.util.List;
 import java.util.Random;
+
+import junit.framework.TestCase;
 
 import main.java.application.ContatoFacade;
 import main.java.domain.model.Contato;
 import main.java.domain.model.ContatoEmpresa;
 import main.java.infrastructure.persistence.ContatoRepositoryImpl;
+import org.junit.Test;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
 
-public class ContatoFacadeTest {
+public class ContatoFacadeTest extends TestCase{
 
 	private ContatoFacade contatoFacade;
 	

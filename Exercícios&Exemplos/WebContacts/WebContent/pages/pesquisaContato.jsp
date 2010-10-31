@@ -64,7 +64,8 @@
 						
 						<f:facet name="footer">
 							<rich:datascroller id="dataScroller" for="tableContatos" 
-								page="#{pesquisaContatoBean.pagina}"> </rich:datascroller>
+								page="#{pesquisaContatoBean.pagina}"> 
+							</rich:datascroller>
 						</f:facet>					
 					</rich:dataTable>
 					
