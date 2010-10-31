@@ -1,9 +1,9 @@
 package test.java.application;
 
-import static org.junit.Assert.assertEquals;
-
 import java.util.List;
 import java.util.Random;
+
+import junit.framework.TestCase;
 
 import main.java.application.ContatoFacade;
 import main.java.application.TelefoneFacade;
@@ -15,7 +15,7 @@ import main.java.infrastructure.persistence.TelefoneRepositoryImpl;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TelefoneFacadeTest {
+public class TelefoneFacadeTest extends TestCase {
 
 	private TelefoneFacade telefoneFacade;
 	private ContatoFacade contatoFacade;
